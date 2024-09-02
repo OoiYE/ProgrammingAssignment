@@ -1,8 +1,8 @@
-#include <iostream>  // for cout, cin, endl
-#include <conio.h>   // for _getch, _kbhit
-#include <windows.h> // for Sleep, SetConsoleCursorPosition, COORD
-#include <ctime>     // for time()
-#include <cstdlib>   // for rand(), srand()
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+#include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
@@ -23,7 +23,7 @@ struct COORDINATE
     int y;
 };
 
-// Food structure to represent different types of food
+// Represent different types of food
 struct FOOD
 {
     COORDINATE position;
@@ -41,7 +41,7 @@ void moveBack(COORDINATE body[], int size)
     }
 }
 
-// Function to check if the snake has collided with itself
+// Check if the snake has collided with itself
 bool checkSelfCollision(COORDINATE body[], int size)
 {
     for (int i = 1; i < size; i++)
@@ -54,7 +54,7 @@ bool checkSelfCollision(COORDINATE body[], int size)
     return false;
 }
 
-// Function to generate random food on the board
+// Generate different type of food on the board
 void generateFood(FOOD &food)
 {
     food.position.x = rand() % (W - 2) + 1; // Position food within walls
@@ -79,7 +79,7 @@ void generateFood(FOOD &food)
     }
 }
 
-// Function to run the game for a single player
+// Run the game for a single player
 int runGame(int playerNum)
 {
     system("cls"); // Clear console screen, start from empty
